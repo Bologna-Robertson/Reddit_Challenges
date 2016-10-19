@@ -1,8 +1,16 @@
+/*
+
+zeckendorf.java
+By: Brian Floss
+10/5/16
+
+*/
 import java.util.Scanner;
 import java.util.*;
 
 public class zeckendorf {
 	
+	/*calculates 'size' digits of the Fibonacci sequence */
 	public static int[] fib_calc(int size) {
 		int[] nums = new int[size];
 		nums[0] = 1; nums[1] = 1;
@@ -12,6 +20,7 @@ public class zeckendorf {
 		return nums;
 	}
 	
+	/*finds the Zeckendorf representation of x */
 	public static LinkedList<Integer> solve(int[] b, int x) {
 		LinkedList<Integer> a = new LinkedList<Integer>();
 		for (int i=b.length-1;i>0;i--) {
@@ -23,6 +32,7 @@ public class zeckendorf {
 		return a;
 	}
 	
+	/*for writing out the Zeckendorf representation */
 	public static void write(LinkedList<Integer> x, int a) {
 		System.out.print(a + " = ");
 		for (int i=0; i<=x.size()-2; i++) {
@@ -31,6 +41,7 @@ public class zeckendorf {
 		System.out.println(x.getLast());
 	}
 	
+	/* reads in an integer then writes out N number of Zeckendorf representations */
 	public static void main(String[] args) {
 		int[] fib_numbers = fib_calc(20);
 		Scanner in = new Scanner(System.in);
